@@ -30,6 +30,13 @@
       "files": []
     },
     {
+      "id": 5,
+      "name": "flexible-worldwide-participant-selection",
+      "prompt": "创意圆桌：这个项目不一定要用人物池里的人，请从全世界真实人物和真实商业角色里现挑，也要放一个年轻消费者代表进来。",
+      "expected_output": "Should choose participants freely beyond the person pool, including real commercial roles such as brand marketing directors when useful and at least one unexpected consumer/youth representative.",
+      "files": []
+    },
+    {
       "id": 4,
       "name": "taobao-context-without-overfitting",
       "prompt": "淘宝闪购区域比稿，想做一个城市专属 campaign，创意圆桌先帮我找几个创意核。",

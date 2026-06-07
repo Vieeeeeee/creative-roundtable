@@ -22,7 +22,7 @@
 (def-principles 'creative-roundtable
   '((framework-nature . constructive)
     (moderator-function . strategic-meta-cognitive)
-    (agent-archetype . representative-figure)
+    (agent-archetype . representative-figure-or-real-role)
     (process-flow . dialectical)
     (interaction-type . marketing-action)
     (output-goal . creative-knowledge-network)
@@ -57,7 +57,7 @@
       (display project-context)
       (display "【主持】：近期调研线索：")
       (display research-digest)
-      (display "【主持】：为打开这道题，我邀请以下几位代表人物：")
+      (display "【主持】：为打开这道题，我从真实人物与真实商业角色中现挑以下代表：")
       (for-each (person active-participants)
         (display "- " (get-property person 'name) "｜" (get-property person 'lens)))
       (let (opening-question "在出创意之前，我们先定义：这道题真正要改变的是什么？用户为什么会动，品牌为什么会赢，渠道/商家/门店为什么愿意参与，传播结束后还能沉淀什么资产？")
@@ -89,8 +89,8 @@
       (set question-under-discussion focused-question)
       (display "【主持】：我们继续深挖当前争议：「" focused-question "」")))
 
-  (responds-to 'add-representative (person-name)
-    (let (new-person (create-marketing-representative person-name))
+  (responds-to 'add-representative (person-name-or-role)
+    (let (new-person (create-marketing-representative person-name-or-role))
       (add-to-list active-participants new-person)
       (display "【主持】：欢迎 " (get-property new-person 'name) " 加入。请先就当前问题给出判断。")))
 
@@ -133,7 +133,7 @@
         (if (is-command? user-command '可) (moderator 'commit-to-next-question))
         (if (is-command? user-command '深入此节) (moderator 'deepen-section))
         (if (is-command? user-command '引入新人物)
-            (let (new-person-name (ask-user "您希望邀请哪位新人物加入？"))
+            (let (new-person-name (ask-user "您希望邀请哪位新人物或真实角色加入？"))
               (moderator 'add-representative new-person-name)))
         (if (is-command? user-command '审稿)
             (set (get-property moderator 'question-under-discussion) "请各位从策略、创意、用户、转化和执行角度审稿。"))
