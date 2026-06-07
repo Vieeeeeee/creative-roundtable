@@ -15,17 +15,17 @@ description: >-
 
 <example>
 User: 创意圆桌 本地生活平台暑期夜宵季怎么破题？
-Assistant: [Launches marketing creative roundtable with moderator and representative figures]
+Assistant: 先读取项目背景与近期案例，再组织创意圆桌，围绕用户动作、商家参与、平台资产和传播创意展开讨论。
 </example>
 
 <example>
 User: 让大咖来辩 国产新能源车家庭试驾传播怎么做出信任感？
-Assistant: [Launches creative roundtable on the campaign problem]
+Assistant: 启动创意圆桌，从品牌信任、家庭决策、试驾转化、渠道执行和用户真实顾虑几个方向推进。
 </example>
 
 <example>
 User: 帮我审稿这个 slogan 和 KV 方向：「城市醒来，早餐准时到」
-Assistant: [Launches review-mode creative roundtable]
+Assistant: 切换到挑刺与修正模式，让不同角色围绕文案、画面、传播记忆点和转化路径提出修改意见。
 </example>
 
 ## Instructions
