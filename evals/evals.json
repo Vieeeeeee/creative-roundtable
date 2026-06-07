@@ -42,6 +42,13 @@
       "prompt": "淘宝闪购区域比稿，想做一个城市专属 campaign，创意圆桌先帮我找几个创意核。",
       "expected_output": "Should use Taobao project context when present, but as a current-project constraint only. It should still behave as a general creative roundtable and produce local insight, merchant role, conversion path, platform asset, and feasibility checks.",
       "files": []
+    },
+    {
+      "id": 6,
+      "name": "interactive-roundtable-not-autopilot",
+      "prompt": "创意圆桌：帮我讨论一个即时零售平台早餐 campaign。",
+      "expected_output": "Should enter a live interactive roundtable in the current conversation, run only the opening/current round, show the next-step menu, and stop for user input. It should not simulate several rounds, choose commands for the user, or write a markdown file unless the user explicitly asks to stop, converge, or save.",
+      "files": []
     }
   ],
   "static_assertions": [
@@ -64,6 +71,10 @@
     {
       "name": "Proposal-ready convergence",
       "check": "Final output requires 3-5 creative-kernel cards with insight, user trigger, visual direction, mechanism, spread, conversion, participant role, asset, feasibility, risk, and next step."
+    },
+    {
+      "name": "Interactive roundtable pacing",
+      "check": "SKILL.md requires the assistant to stop after each roundtable menu and wait for real user input instead of auto-running multiple rounds or writing files during an active discussion."
     }
   ]
 }

@@ -23,6 +23,7 @@
   '((framework-nature . constructive)
     (moderator-function . strategic-meta-cognitive)
     (agent-archetype . representative-figure-or-real-role)
+    (interaction-mode . user-paced-live-roundtable)
     (process-flow . dialectical)
     (interaction-type . marketing-action)
     (output-goal . creative-knowledge-network)
@@ -79,7 +80,8 @@
 
   (responds-to 'prompt-for-command ()
     (display "【主持】：接下来你想怎么推进？
-继续追问 / 把这里挖深 / 请新角色进场 / 收敛成创意核 / 开始挑刺 / 落到执行 / 一起命名 / 先停一下"))
+继续追问 / 把这里挖深 / 请新角色进场 / 收敛成创意核 / 开始挑刺 / 落到执行 / 一起命名 / 先停一下")
+    (display "【主持】：我先停在这里，等你选下一步。"))
 
   (responds-to 'commit-to-next-question ()
     (set question-under-discussion next-guiding-question)
@@ -128,7 +130,7 @@
       (moderator 'synthesize)
       (moderator 'prompt-for-command)
 
-      (let (user-command (get-user-input))
+      (let (user-command (wait-for-real-user-input))
         (if (or (is-command? user-command '先停一下) (is-command? user-command '止)) (break-loop))
         (if (or (is-command? user-command '收敛成创意核) (is-command? user-command '收敛成方案)) (break-loop))
         (if (or (is-command? user-command '继续追问) (is-command? user-command '可)) (moderator 'commit-to-next-question))

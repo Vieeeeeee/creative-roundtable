@@ -1,10 +1,11 @@
 ---
 name: creative-roundtable
 description: >-
-  Structured Chinese marketing creative roundtable with a truth-seeking
+  Interactive Chinese marketing creative roundtable with a truth-seeking
   moderator who invites representative creative, strategy, business, culture,
-  and platform figures to debate campaign briefs, brand ideas, slogans, KV
-  directions, conversion mechanics, and proposal drafts. Use when user says
+  platform figures, and real commercial roles to debate campaign briefs, brand
+  ideas, slogans, KV directions, conversion mechanics, and proposal drafts. Use
+  when user says
   "创意圆桌", "大咖圆桌", "圆桌破题", "比稿圆桌", "让大咖来辩",
   "营销创意", "$creative-roundtable", "creative-roundtable", "campaign",
   "brief", "slogan", "KV", "创意核", "审稿", "打磨方案",
@@ -31,6 +32,8 @@ Assistant: 切换到挑刺与修正模式，让不同角色围绕文案、画面
 ## Instructions
 
 为了执行本项技能，请严格按照以下步骤操作：
+
+本技能默认是**现场互动圆桌**。触发后，在当前对话中进入圆桌场景，以用户节奏推进：每轮只完成当前讨论轮，主持人综述并展示推进菜单后立即停下，等待用户下一条消息。用户选择是唯一的下一步信号；只有用户明确要求 `先停一下`、`收敛成创意核` 或 `保存` 时，才进入结束与写入文件。
 
 1. **读取参考资料与项目背景**
    读取 `references/original-prompt.org` 了解本技能的原始框架设计意图；需要选人时读取 `references/person-pool.md`。
@@ -117,6 +120,8 @@ Assistant: 切换到挑刺与修正模式，让不同角色围绕文案、画面
    继续追问 / 把这里挖深 / 请新角色进场 / 收敛成创意核 / 开始挑刺 / 落到执行 / 一起命名 / 先停一下
    ```
 
+   展示菜单后，当前回复到此为止，等待用户选择；用户下一条消息决定继续追问、挖深、引入角色、收敛、挑刺、落地、命名或停止。
+
    推进方式：
 
    * `继续追问`：接受下一层问题，继续推进
@@ -147,7 +152,7 @@ Assistant: 切换到挑刺与修正模式，让不同角色围绕文案、画面
    * 列出**开放问题**（进入提案前需要验证的事实）
 
 7. **写入文件（完整保存）**
-   将讨论完整写入文件：
+   只有在用户明确结束、收敛或要求保存后，才将讨论完整写入文件；进行中的互动轮次只在当前对话中展示。
 
    1. 运行 `date +%Y%m%dT%H%M%S` 获取时间戳
    2. 在当前工作区创建或使用 `outputs/` 目录，写入 `outputs/{timestamp}-creative-roundtable-{议题关键词}.md`
