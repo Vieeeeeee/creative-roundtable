@@ -150,7 +150,7 @@ Assistant: 切换到挑刺与修正模式，让不同角色围绕文案、画面
    将讨论完整写入文件：
 
    1. 运行 `date +%Y%m%dT%H%M%S` 获取时间戳
-   2. 当前工作区有 `outputs/` 时，写入 `outputs/{timestamp}-creative-roundtable-{议题关键词}.md`；否则写入 `~/Documents/notes/{timestamp}--创意圆桌-{议题关键词}__creative_roundtable.md`
+   2. 在当前工作区创建或使用 `outputs/` 目录，写入 `outputs/{timestamp}-creative-roundtable-{议题关键词}.md`
    3. 文件结构：
 
       ```org
