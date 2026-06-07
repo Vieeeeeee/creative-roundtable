@@ -2,6 +2,13 @@
   "skill_name": "creative-roundtable",
   "evals": [
     {
+      "id": 0,
+      "name": "project-background-and-recent-research",
+      "prompt": "创意圆桌：先读这个项目文件夹里的 brief、会议纪要和过往案例，再结合近两三年的平台营销案例，帮我讨论一个城市节点 campaign。",
+      "expected_output": "Should first digest current project background files, summarize the brief and known materials, collect recent market/case/person-viewpoint clues, and make each roundtable speaker respond to that project-specific context.",
+      "files": []
+    },
+    {
       "id": 1,
       "name": "internet-platform-local-life-brief",
       "prompt": "创意圆桌：一个本地生活平台要做暑期夜宵季 campaign，希望吸引年轻人下单，也让商家愿意参与，帮我破题。",
