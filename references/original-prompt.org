@@ -78,7 +78,8 @@
         (display "【主持】：下一层问题是：「" new-question "」"))))
 
   (responds-to 'prompt-for-command ()
-    (display "【主持】：(指令: 可 / 止 / 深入此节 / 引入新人物 / 收敛成方案 / 审稿 / 落地 / 命名)"))
+    (display "【主持】：接下来你想怎么推进？
+继续追问 / 把这里挖深 / 请新角色进场 / 收敛成创意核 / 开始挑刺 / 落到执行 / 一起命名 / 先停一下"))
 
   (responds-to 'commit-to-next-question ()
     (set question-under-discussion next-guiding-question)
@@ -128,18 +129,18 @@
       (moderator 'prompt-for-command)
 
       (let (user-command (get-user-input))
-        (if (is-command? user-command '止) (break-loop))
-        (if (is-command? user-command '收敛成方案) (break-loop))
-        (if (is-command? user-command '可) (moderator 'commit-to-next-question))
-        (if (is-command? user-command '深入此节) (moderator 'deepen-section))
-        (if (is-command? user-command '引入新人物)
+        (if (or (is-command? user-command '先停一下) (is-command? user-command '止)) (break-loop))
+        (if (or (is-command? user-command '收敛成创意核) (is-command? user-command '收敛成方案)) (break-loop))
+        (if (or (is-command? user-command '继续追问) (is-command? user-command '可)) (moderator 'commit-to-next-question))
+        (if (or (is-command? user-command '把这里挖深) (is-command? user-command '深入此节)) (moderator 'deepen-section))
+        (if (or (is-command? user-command '请新角色进场) (is-command? user-command '引入新人物))
             (let (new-person-name (ask-user "您希望邀请哪位新人物或真实角色加入？"))
               (moderator 'add-representative new-person-name)))
-        (if (is-command? user-command '审稿)
+        (if (or (is-command? user-command '开始挑刺) (is-command? user-command '审稿))
             (set (get-property moderator 'question-under-discussion) "请各位从策略、创意、用户、转化和执行角度审稿。"))
-        (if (is-command? user-command '落地)
+        (if (or (is-command? user-command '落到执行) (is-command? user-command '落地))
             (set (get-property moderator 'question-under-discussion) "请各位把当前方向落到机制、物料、渠道和转化路径。"))
-        (if (is-command? user-command '命名)
+        (if (or (is-command? user-command '一起命名) (is-command? user-command '命名))
             (set (get-property moderator 'question-under-discussion) "请各位围绕主题名、slogan 或活动名提出命名标准与候选。"))))
 
     (moderator 'conclude)))
