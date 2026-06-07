@@ -1,0 +1,55 @@
+{
+  "skill_name": "creative-roundtable",
+  "evals": [
+    {
+      "id": 1,
+      "name": "internet-platform-local-life-brief",
+      "prompt": "创意圆桌：一个本地生活平台要做暑期夜宵季 campaign，希望吸引年轻人下单，也让商家愿意参与，帮我破题。",
+      "expected_output": "Should trigger creative-roundtable, use Chinese, choose a mixed Chinese/global panel, identify user action, merchant incentive, platform asset, and produce paths toward creative kernels.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "industrial-brand-trust-campaign",
+      "prompt": "让大咖来辩：一个国产新能源车品牌想做一次家庭用户试驾传播，不想只讲参数，怎么做得有信任感？",
+      "expected_output": "Should not assume Taobao/local-life constraints. It should switch to a durable-goods/auto lens, preserve foreign figures' thinking logic in Chinese, and stress-test trust, dealer/store conversion, and test-drive action.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "slogan-and-kv-polish",
+      "prompt": "帮我审稿这个 slogan 和 KV 方向：'城市醒来，早餐准时到'，客户是一个即时零售平台。",
+      "expected_output": "Should trigger review/polish mode, critique the slogan/KV through multiple expert lenses, avoid generic praise, and offer sharper alternatives plus conversion and visual checks.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "taobao-context-without-overfitting",
+      "prompt": "淘宝闪购区域比稿，想做一个城市专属 campaign，创意圆桌先帮我找几个创意核。",
+      "expected_output": "Should use Taobao project context when present, but as a current-project constraint only. It should still behave as a general creative roundtable and produce local insight, merchant role, conversion path, platform asset, and feasibility checks.",
+      "files": []
+    }
+  ],
+  "static_assertions": [
+    {
+      "name": "Chinese-first default",
+      "check": "SKILL.md requires default Chinese output and Chinese expression for global figures."
+    },
+    {
+      "name": "General marketing scope",
+      "check": "Frontmatter description includes broad domestic internet, industrial, consumer, platform, local-life, city/culture, and proposal contexts."
+    },
+    {
+      "name": "Not Taobao-specific",
+      "check": "Taobao appears only as an example/current-project context, not as the frontmatter default scope."
+    },
+    {
+      "name": "Independent operating charter",
+      "check": "references/original-prompt.org defines creative-roundtable as an independent Chinese marketing creative roundtable system with its own principles, roles, loop, filters, outputs, and save protocol."
+    },
+    {
+      "name": "Proposal-ready convergence",
+      "check": "Final output requires 3-5 creative-kernel cards with insight, user trigger, visual direction, mechanism, spread, conversion, participant role, asset, feasibility, risk, and next step."
+    }
+  ]
+}
